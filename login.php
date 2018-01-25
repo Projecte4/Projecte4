@@ -26,7 +26,7 @@
         <br>
   			<input type="text" placeholder="Apellido" name="Apellido"required>
         <br>
-        <input type="text" placeholder="Nick" name="Nick"required>
+        <input type="text" placeholder="Usuario" name="Nick"required>
         <br>
         <input type="text" placeholder="Password" name="Password"required>
         <br>

@@ -1,9 +1,9 @@
 <?php
 include "conexion_proc.php";
 error_reporting(0);
-  $nom_usu=$_REQUEST['Username'];
+  $nick_usu=$_REQUEST['Nick'];
   $pass_usu=$_REQUEST['Password'];
-  $query="SELECT * FROM usuarios WHERE nombre_usu='$nom_usu' AND password='$pass_usu'";
+  $query="SELECT * FROM usuarios WHERE nick='$nick_usu' AND password='$pass_usu'";
   $query2=mysqli_query($conexion,$query);
   if (mysqli_num_rows($query2)>0) {
     echo "Usuario Correcto";
