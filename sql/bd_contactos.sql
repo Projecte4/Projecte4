@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-01-2018 a las 19:55:57
+-- Tiempo de generación: 25-01-2018 a las 18:24:00
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -43,6 +43,19 @@ CREATE TABLE `contactos` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `ubicaciones`
+--
+
+CREATE TABLE `ubicaciones` (
+  `id_ubi` int(11) NOT NULL,
+  `direccion` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `codigo_postal` int(11) NOT NULL,
+  `id_contacto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -55,6 +68,14 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usu`, `nombre_usu`, `apellidos_usu`, `nick`, `password`) VALUES
+(2, 'test', '1', 'test1', 'test'),
+(3, 'sg', 'sdgrde', '1', '32');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -62,13 +83,22 @@ CREATE TABLE `usuarios` (
 -- Indices de la tabla `contactos`
 --
 ALTER TABLE `contactos`
-  ADD PRIMARY KEY (`id_contacto`);
+  ADD PRIMARY KEY (`id_contacto`),
+  ADD KEY `FK_id_usu` (`id_usu`);
+
+--
+-- Indices de la tabla `ubicaciones`
+--
+ALTER TABLE `ubicaciones`
+  ADD PRIMARY KEY (`id_ubi`),
+  ADD KEY `FK_id_contacto` (`id_contacto`);
 
 --
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usu`);
+  ADD PRIMARY KEY (`id_usu`),
+  ADD UNIQUE KEY `clau_nick` (`nick`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -81,10 +111,32 @@ ALTER TABLE `contactos`
   MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `ubicaciones`
+--
+ALTER TABLE `ubicaciones`
+  MODIFY `id_ubi` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `contactos`
+--
+ALTER TABLE `contactos`
+  ADD CONSTRAINT `FK_id_usu` FOREIGN KEY (`id_usu`) REFERENCES `usuarios` (`id_usu`);
+
+--
+-- Filtros para la tabla `ubicaciones`
+--
+ALTER TABLE `ubicaciones`
+  ADD CONSTRAINT `FK_id_contacto` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id_contacto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
