@@ -11,8 +11,8 @@ error_reporting(0);
 
   }else {
     echo "<p align=center>Usuario/password incorrecto</p>";
-    echo"<form method=post action=login.php>";
-    echo"<p align=center><input type=submit value=Volver</p>";
+    echo"<form method=post action=indexs.php>";
+    echo"<center><input type=submit value=Volver></center>";
     echo "</form>";
   }
 //error_reporting(0);

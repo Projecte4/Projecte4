@@ -12,8 +12,8 @@
 <body>
 
   <?php
-  include "funcionlogin.php";
-  echo "<br>Bienvenido";
+  include "login.proc.php";
+ // echo "<br>Bienvenido";
    ?>
 
 	</div>

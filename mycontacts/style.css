@@ -1,0 +1,30 @@
+body{
+	background-color: rgb(200, 164, 109);
+}
+a{
+	font-size: 20px;
+}
+.cabecera {
+	background-color: blue;
+	height: 25%;
+	
+
+}
+
+.explicacion{
+	border: 2px solid black;
+	width: 35%;
+	float: left;
+	
+}
+
+.registrar {
+
+	border: 2px solid black;
+	width: 35%;
+	float:right; 
+}
+
+.login {
+float: right;
+}
