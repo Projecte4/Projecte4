@@ -12,6 +12,7 @@
 		$direccion=$_REQUEST['Direccion']
 		$telef=$_REQUEST['Telefono']
 		$conexion = mysqli_connect ("localhost", "root", "","bd_mycontacts");
+		$idusu=$_SESSION['id']
 
 		if ($pass==$pass2) {
 			$sql="INSERT INTO `contactos`(`id_contacto`, `nombre`, `apellidos`, `correo`, `direccion`, `telefono` ,'id_usu') VALUES (null, '$nombre', '$apellido', $correo, '$direccion', '$telef','$idusu')";
