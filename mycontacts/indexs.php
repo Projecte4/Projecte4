@@ -12,7 +12,6 @@
 
 <body>
     <div class="cabecera">
-      <img src="/Logo_completo.png" alt="">
 
 		<h1>Iniciar sessión</h1>
 		<form class="form" method="post" name="formlogin" action="test.php">
