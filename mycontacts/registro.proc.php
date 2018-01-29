@@ -14,7 +14,7 @@
 		$conexion = mysqli_connect ("localhost", "root", "","bd_mycontacts");
 
 		if ($pass==$pass2) {
-			$sql="INSERT INTO `usuarios`(`id_usu`, `nombre_usu`, `apellidos_usu`, `correo`, `nick`, `password`) VALUES (null, '$nombre', '$apellido', $correo, '$usuario', '$pass')";
+			$sql="INSERT INTO `usuarios`(`id_usu`, `nombre_usu`, `apellidos_usu`, `correo`, `nick`, `password`) VALUES (null, '$nombre', '$apellido', '$correo', '$usuario', '$pass')";
 		$consulta=mysqli_query($conexion,$sql);
 		echo "<a>¡Bienvenido a nuestra pagina!</a>";
 		 echo"<form method=post action=indexs.php>";

@@ -4,27 +4,61 @@ body{
 a{
 	font-size: 20px;
 }
-.cabecera {
+.cabecera{
 	background-color: blue;
-	height: 25%;
-	
+	height: 80px;
+}
 
+.cabecera1 {
+	float: left;
+}
+
+.izquierda{
+	float: left;
+	border: 2px solid black;
+	width: 50%;
+	margin-left: 7%;
+}
+
+.derecha{
+	float: right;
+	border: 2px solid black;
+	width: 30%;
+	margin-right: 7%;
 }
 
 .explicacion{
 	border: 2px solid black;
-	width: 35%;
 	float: left;
-	
+	 
 }
 
 .registrar {
 
 	border: 2px solid black;
-	width: 35%;
+	width: 100%;
 	float:right; 
+	
 }
 
 .login {
-float: right;
+	margin-top: 2%;
+	float: right;
+	margin-right: 5%;
+}
+
+.centrado{
+	
+	margin-left: 7%;
+	margin-right: 7%;
+}
+.mapa{
+	border: 2px solid black;
+
+}
+
+img.logo {
+	width: 400px;
+	height: 80px;
+	margin-left: 10%;
 }
