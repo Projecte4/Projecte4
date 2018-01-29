@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +15,9 @@
 <body>
 
   <?php
+  session_start();
   include "login.proc.php";
+
  // echo "<br>Bienvenido";
    ?>
    <h1>Añadir un contacto</h1>

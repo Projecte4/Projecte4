@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +15,11 @@
   $usuario=$_REQUEST['Usuario'];
   $pass=$_REQUEST['Password'];
   $pass2=$_REQUEST['Password2'];
+	$idUsu=$_SESSION['id'];
 		$conexion = mysqli_connect ("localhost", "root", "","bd_mycontacts");
 
-
 		if ($pass==$pass2) {
-			$sql="UPDATE `usuarios`(`id_usu`, `nombre_usu`, `apellidos_usu`, `correo`, `nick`, `password`) VALUES (null, '$nombre', '$apellido', $correo, '$usuario', '$pass')";
+			$sql="UPDATE usuarios SET nombre_usu='$nombre', apellidos_usu='$apellido', correo='$correo', nick='$usuario', password='$pass' WHERE id_usu = $idUsu";
 		$consulta=mysqli_query($conexion,$sql);
 		echo "<a>¡Perfil modificado!</a>";
 		 echo"<form method=post action=indexs.php>";
@@ -27,9 +31,6 @@
     	echo"<center><input type=submit value=Volver></center>";
     	echo "</form>";
 		}
-
-
-
 ?>
 
 

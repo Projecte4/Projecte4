@@ -1,3 +1,12 @@
+<?php
+session_start();
+	if(isset($_SESSION['id'])){
+		header("test.php");
+	} else if(isset($_SESSION['error'])){
+		$error = $_SESSION['error'];
+		session_destroy();
+	}
+   ?>
 <!DOCTYPE html>
 <html>
 <head>

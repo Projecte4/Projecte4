@@ -1,3 +1,7 @@
+<?php
+session_start();
+echo $_SESSION['id'];
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,6 +19,8 @@
       <br>
       <input type="text" placeholder="Dirrección" name="Direccion"required>
       <input type="text" placeholder="Telefono" name="telefono"required>
+      <input type="password" placeholder="Password" name="Password"required>
+      <input type="password" placeholder="Password2" name="Password2"required>
       <br>
       <button type="submit" id="login-button">Modificar</button></center>
   </body>
