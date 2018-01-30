@@ -38,6 +38,7 @@ session_start();
     
     </div>
   </div>
+  <br>
   <div class="izquierda">
     <center><h2>¿Que funciones hace nuestra pagina?</h2></center>
     <center><div class="explicacion">
@@ -50,6 +51,7 @@ session_start();
     </a>
     </div></center>
   </div>
+  
     <div class="derecha">
       <center><h2>¿Aun no estas registrado?</h2></center>
     <div class="registrar">

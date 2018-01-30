@@ -17,7 +17,6 @@ session_start();
   $pass2=$_REQUEST['Password2'];
 	$idUsu=$_SESSION['id'];
 		$conexion = mysqli_connect ("localhost", "root", "","bd_mycontacts");
-
 		if ($pass==$pass2) {
 			$sql="UPDATE usuarios SET nombre_usu='$nombre', apellidos_usu='$apellido', correo='$correo', nick='$usuario', password='$pass' WHERE id_usu = $idUsu";
 		$consulta=mysqli_query($conexion,$sql);

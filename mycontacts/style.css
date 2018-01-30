@@ -47,6 +47,13 @@ a{
 	margin-right: 5%;
 }
 
+.logout {
+	margin-top: 2%;
+	float: right;
+	margin-right: 5%;
+}
+
+
 .centrado{
 	
 	margin-left: 7%;
@@ -55,6 +62,16 @@ a{
 .mapa{
 	border: 2px solid black;
 
+}
+
+.añadircontacto{
+	border: 2px solid black;
+	width: 35%;
+}
+
+.modificar_perfil{
+	border: 2px solid black;
+	width: 35%;
 }
 
 img.logo {
