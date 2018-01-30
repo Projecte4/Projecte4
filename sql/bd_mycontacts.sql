@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2018 a las 19:41:32
+-- Tiempo de generación: 30-01-2018 a las 16:41:14
 -- Versión del servidor: 10.1.26-MariaDB
 -- Versión de PHP: 7.1.9
 
@@ -33,23 +33,25 @@ CREATE TABLE `contactos` (
   `nombre` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `apellidos` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `correo` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
-  `direccion` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion1` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion2` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `codigo_postal1` int(5) NOT NULL,
+  `codigo_postal2` int(5) DEFAULT NULL,
+  `latitud1` int(9) NOT NULL,
+  `longitud1` int(9) NOT NULL,
+  `latitud2` int(9) DEFAULT NULL,
+  `longitud2` int(9) DEFAULT NULL,
   `telefono` int(9) NOT NULL,
   `id_usu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `ubicaciones`
+-- Volcado de datos para la tabla `contactos`
 --
 
-CREATE TABLE `ubicaciones` (
-  `id_ubi` int(11) NOT NULL,
-  `direccion` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `codigo_postal` int(11) NOT NULL,
-  `id_contacto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `contactos` (`id_contacto`, `nombre`, `apellidos`, `correo`, `direccion1`, `direccion2`, `codigo_postal1`, `codigo_postal2`, `latitud1`, `longitud1`, `latitud2`, `longitud2`, `telefono`, `id_usu`) VALUES
+(1, 'Alberto', 'Blanco', 'Ablanco@gmail.com', 'iokese', NULL, 0, NULL, 0, 0, NULL, NULL, 987654321, 3),
+(2, 'Pepe', 'Marron', 'pmarron@gmail.com', 'un lugar de la mancha', NULL, 0, NULL, 0, 0, NULL, NULL, 9886534, 3);
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usu`, `nombre_usu`, `apellidos_usu`, `correo`, `nick`, `password`) VALUES
 (2, 'Anush', 'Aram Zafra', '', 'anush97', 'QAZ123qaz'),
-(3, 'David', 'Martinez Punzano', '', 'damapu96', 'QWEqwe123'),
+(3, 'David', 'Martinez Punzano', 'La verdad es que no', 'damapu96', 'QWEqwe123'),
 (5, 'hola', 'quetal', '', 'estoy', 'bien'),
 (6, 'Felipe', 'Gonzalez', '', 'fego', 'QWEqwe123'),
 (8, '', '', '', '', 'QWEqwe123'),
@@ -91,13 +93,6 @@ ALTER TABLE `contactos`
   ADD KEY `FK_id_usu` (`id_usu`);
 
 --
--- Indices de la tabla `ubicaciones`
---
-ALTER TABLE `ubicaciones`
-  ADD PRIMARY KEY (`id_ubi`),
-  ADD KEY `FK_id_contacto` (`id_contacto`);
-
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -112,13 +107,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `contactos`
 --
 ALTER TABLE `contactos`
-  MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `ubicaciones`
---
-ALTER TABLE `ubicaciones`
-  MODIFY `id_ubi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -135,12 +124,6 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `contactos`
   ADD CONSTRAINT `FK_id_usu` FOREIGN KEY (`id_usu`) REFERENCES `usuarios` (`id_usu`);
-
---
--- Filtros para la tabla `ubicaciones`
---
-ALTER TABLE `ubicaciones`
-  ADD CONSTRAINT `FK_id_contacto` FOREIGN KEY (`id_contacto`) REFERENCES `contactos` (`id_contacto`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
