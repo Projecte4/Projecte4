@@ -21,7 +21,7 @@ session_start();
 			$sql="UPDATE usuarios SET nombre_usu='$nombre', apellidos_usu='$apellido', correo='$correo', nick='$usuario', password='$pass' WHERE id_usu = $idUsu";
 		$consulta=mysqli_query($conexion,$sql);
 		echo "<a>¡Perfil modificado!</a>";
-		 echo"<form method=post action=indexs.php>";
+		echo"<form method=post action=indexs.php>";
     	echo"<center><input type=submit value=Volver></center>";
     	echo "</form>";
 		}else{

@@ -10,7 +10,7 @@ if (mysqli_num_rows($resultado)>0) {
     $q2 = "SELECT * FROM ubicaciones WHERE id_usu='$idCon'";
     $resultUbi =mysqli_query($conexion, $q2);
     if (mysqli_num_rows($resultUbi)>0) {
-      $
+      
     }
       echo "<div class='contactos'>";
       echo "<br/>Nombre: $registro[nombre]";

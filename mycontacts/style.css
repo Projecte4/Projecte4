@@ -74,6 +74,11 @@ a{
 	width: 35%;
 }
 
+.error{
+	border: 2px solid black;
+	text-align: center;
+}
+
 img.logo {
 	width: 400px;
 	height: 80px;
