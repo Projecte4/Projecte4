@@ -6,6 +6,7 @@ session_start();
 		$error = $_SESSION['error'];
 		session_destroy();
 	}
+	
    ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@ session_start();
 <div class="cabecera1">
 
 		<!--<h1>Iniciar sessión</h1>-->
-  
+
     <img class="logo" src="img/logo.png">
   </div>
     <div class="login">
@@ -35,7 +36,7 @@ session_start();
 			<button type="submit" id="login-button">Login</button>
       <br>
       </form>
-    
+
     </div>
   </div>
   <br>
@@ -51,7 +52,7 @@ session_start();
     </a>
     </div></center>
   </div>
-  
+
     <div class="derecha">
       <center><h2>¿Aun no estas registrado?</h2></center>
     <div class="registrar">

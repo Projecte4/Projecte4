@@ -13,7 +13,7 @@ session_start();
 <div class="cabecera1">
 
     <!--<h1>Iniciar sessión</h1>-->
-  
+
     <img class="logo" src="img/logo.png">
   </div>
     <div class="logout">
@@ -22,7 +22,7 @@ session_start();
       <button type="submit" id="login-button">Logout</button>
       <br>
       </form>
-    
+
     </div>
   </div>
 	<?php
@@ -35,7 +35,7 @@ session_start();
 		$idusu=$_SESSION['id'];
 
 
-			$sql="INSERT INTO contactos (nombre, apellidos, correo, direccion, telefono, id_usu) VALUES ('$nombre', '$apellido', '$correo', '$direccion', '$telef','$idusu')";
+			$sql="INSERT INTO contactos (nombre, apellidos, correo, direccion1, telefono, id_usu) VALUES ('$nombre', '$apellido', '$correo', '$direccion', '$telef','$idusu')";
 //echo $sql;
 		$consulta=mysqli_query($conexion,$sql);
 		echo "<a>¡Contacto añadido!</a>";
